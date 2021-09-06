@@ -2,17 +2,17 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
         <script type="text/javascript" src="static/sendData.js"></script>
+        <link rel="stylesheet" href="static/styles.css">
     </head>
 
-
     <body>
-        You've spend blah in fees. Right now that is blah. <br>
-        You've used blah gas to send x transactions, with an avg price of blah. <br>
-        x failed, costing you blah. <br>
+        You've spent <span id = "sol_fees"> &#128580; </span> lamports in fees. Right now that is <span id = "sol_fees_usd">&#128580; </span>. 
+        <br>
 
-        <button onclick="connectWallet()">Connect your wallet.</button>
-        <button onclick="getAddress()">get pub key </button>
+        You've had <span id= "transaction_count">&#128580; </span> transactions, with an average price of <span id= "avg_transaction">&#128580; </span> lamports.
+        <br>
 
-        <p id="demo"> Hi </p>
+        <span id= "fail_count">&#128580; </span> failed, costing you <span id="fail_cost_usd">&#128580;</span>
+        <br>
     </body>
 </html>
