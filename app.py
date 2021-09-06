@@ -15,7 +15,9 @@ def index():
 @app.route("/getfees", methods=['GET'])
 def get_fees():
     addy = request.args.get('addy')
+    print(addy)
     transactions = request_transactions(addy)
+    print(transactions)
     total_fees = request_fees(transactions)
     sol_usd = get_sol_price()
 
@@ -39,8 +41,9 @@ def request_transactions(addy):
 
 def request_fees(transactions):
     fees = []
-    for transaction in transactions:
-        getConfirmedTransaction = f'''
+    getConfirmedTransaction = '['
+    for cnt, transaction in enumerate(transactions):
+        getConfirmedTransaction += f'''
             {{
             "jsonrpc": "2.0",
             "id": 1,
@@ -50,8 +53,13 @@ def request_fees(transactions):
             ]
             }}
         '''.strip()
-        r = requests.post(RPC_ENDPOINT, data=getConfirmedTransaction, headers=HEADERS)
-        fees.append(r.json()['result']['meta']['fee'])
+        if cnt != len(transactions) - 1:
+            getConfirmedTransaction += ','
+    getConfirmedTransaction += ']'   
+
+    r = requests.post(RPC_ENDPOINT, data=getConfirmedTransaction, headers=HEADERS)
+    for i in r.json():
+        fees.append(i['result']['meta']['fee'])
 
     print(fees)
     return sum(fees)
