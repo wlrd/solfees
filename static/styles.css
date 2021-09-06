@@ -1,1 +1,33 @@
-p { display: inline }
+body {
+    color: #222;
+    font: 60px/1em "Cabin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    text-rendering: optimizeLegibility;
+}
+
+span{
+    color: #DC1FFF;
+}
+
+a {
+    text-decoration: none;
+    color: #b8b8b8;
+}
+
+footer {
+    font-size: 0.3em;
+    line-height: 1.5em;
+    color: #666;
+}
+
+#oops {
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}

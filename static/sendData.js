@@ -11,6 +11,12 @@ window.addEventListener('load', async () => {
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     var result = JSON.parse(this.responseText);
+
+                    if (result['failed']){
+                        console.log('Something went wrong')
+                        $('body').html('<p id="oops">Something went wrong!</strong>')
+                    }
+
                     document.getElementById("sol_fees").innerHTML = result['sol_fees']
                     document.getElementById("sol_fees_usd").innerHTML = '$' + result['sol_fees_usd']
 
@@ -27,7 +33,7 @@ window.addEventListener('load', async () => {
         })
     } else {
         console.log('Sign into Phantom!')
-        $('body').html('<p id="oops">Sign into <strong><a href="https://phantom.app/">Phantom</a></strong>')
+        $('body').html('<p id="oops">Sign into <strong><a href="https://phantom.app/">Phantom</a> </strong> to find out how much in fees you\'ve paid on Solana!')
         return;
     }
 });
