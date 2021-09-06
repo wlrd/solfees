@@ -1,30 +1,45 @@
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
-        <script type="text/javascript" src="static/sendData.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/styles.css">
-        <link rel="shortcut icon" type="image/jpg" href="static/favicon-16x16.png"/>
-    </head>
 
-    <title>solana fee calculator</title>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="static/sendData.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="shortcut icon" type="image/jpg" href="static/favicon-16x16.png" />
 
-    <body>
-        You've spent <span id = "sol_fees"> &#128580; </span> lamports in fees. Right now that is <span id = "sol_fees_usd">&#128580; </span>. 
-        <br>
-        <br>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H7HWP3Y6M9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        You've had <span id= "transaction_count">&#128580; </span> transactions, with an average price of <span id= "avg_transaction">&#128580; </span> lamports.
-        <br>
-        <br>
+        gtag('config', 'G-H7HWP3Y6M9');
+    </script>
+</head>
 
-        <span id= "fail_count">&#128580; </span> failed, costing you <span id="fail_cost_usd">&#128580;</span>.
-        <br>
+<title>solana fee calculator</title>
 
-        <br>
-        
-        <footer>
-            Inspired by <a href="https://fees.wtf/">fees.wtf</a>.  If you liked this, give me a follow on <a href="https://twitter.com/wlrdmlk">Twitter</a> for more!
-        </footer>
-    </body>
+<body>
+    You've spent <span id="sol_fees"> &#128580; </span> lamports in fees. Right now that is <span
+        id="sol_fees_usd">&#128580; </span>.
+    <br>
+    <br>
+
+    You've had <span id="transaction_count">&#128580; </span> transactions, with an average price of <span
+        id="avg_transaction">&#128580; </span> lamports.
+    <br>
+    <br>
+
+    <span id="fail_count">&#128580; </span> failed, costing you <span id="fail_cost_usd">&#128580;</span>.
+    <br>
+
+    <br>
+
+    <footer>
+        Inspired by <a href="https://fees.wtf/">fees.wtf</a>. If you liked this, give me a follow on <a
+            href="https://twitter.com/wlrdmlk">Twitter</a> for more!
+    </footer>
+</body>
+
 </html>
