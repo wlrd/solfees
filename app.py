@@ -38,8 +38,16 @@ def get_fees():
         transactions = request_transactions(address)
 
         if(len(transactions) == 0):
-            return json.dumps(FAILED_RESP._asdict())
-
+            return json.dumps(Resp(
+                sol_fees=0,
+                sol_fees_usd=0,
+                fail_count=0,
+                fail_cost_usd=0,
+                avg_transaction_cost=0,
+                num_transactions=0,
+                failed=False
+            )._asdict())
+        
         fees = request_fees(transactions)
 
         total_fees_lamports = sum([i.fees for i in fees])

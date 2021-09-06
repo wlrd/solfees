@@ -17,6 +17,11 @@ window.addEventListener('load', async () => {
                         $('body').html('<p id="oops">Something went wrong!</strong>')
                     }
 
+                    if (result['num_transactions'] == 0){
+                        $('body').html('You have no transactions, time to start using SOL! Time to buy a <a href="https://market.solanamonkey.business/"> monke</a>.')
+                        return;
+                    }
+
                     document.getElementById("sol_fees").innerHTML = result['sol_fees']
                     document.getElementById("sol_fees_usd").innerHTML = '$' + result['sol_fees_usd']
 
