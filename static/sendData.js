@@ -26,7 +26,7 @@ window.addEventListener('load', async () => {
                     document.getElementById("sol_fees_usd").innerHTML = '$' + result['sol_fees_usd']
 
                     document.getElementById("transaction_count").innerHTML = result['num_transactions']
-                    document.getElementById("avg_transaction").innerHTML = result['avg_transaction_cost'] 
+                    document.getElementById("avg_transaction").innerHTML = '$' + result['avg_transaction_cost_usd'] 
 
                     document.getElementById("fail_count").innerHTML = result['fail_count']
                     document.getElementById("fail_cost_usd").innerHTML = '$' + result['fail_cost_usd']

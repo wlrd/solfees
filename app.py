@@ -19,7 +19,7 @@ class Resp(NamedTuple):
     sol_fees_usd: float
     fail_count: float
     fail_cost_usd: float
-    avg_transaction_cost: float
+    avg_transaction_cost_usd: float
     num_transactions: float
     failed: bool
 
@@ -61,7 +61,7 @@ def get_fees():
             sol_fees_usd=truncate(total_fees_usd, 4),
             fail_count=len(failed_fees),
             fail_cost_usd=truncate(failed_fees_usd, 4),
-            avg_transaction_cost=truncate(total_fees_lamports / len(transactions), 4),
+            avg_transaction_cost_usd=truncate(total_fees_usd / len(transactions), 4),
             num_transactions=len(transactions),
             failed=False
         )
