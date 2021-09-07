@@ -30,6 +30,8 @@ window.addEventListener('load', async () => {
 
                     document.getElementById("fail_count").innerHTML = result['fail_count']
                     document.getElementById("fail_cost_usd").innerHTML = '$' + result['fail_cost_usd']
+
+                    document.getElementById("eth_avg_cost").innerHTML = '$41.04'
                 }
             };
     
