@@ -18,7 +18,7 @@ window.addEventListener('load', async () => {
                     }
 
                     if (result['num_transactions'] == 0){
-                        $('body').html('You have no transactions, time to start using SOL! Time to buy a <a href="https://market.solanamonkey.business/"> monke</a>.')
+                        $('body').html('<p id="oops">You have no transactions, time to start using SOL! Time to buy a <a href="https://market.solanamonkey.business/"> monke</a>.</p>')
                         return;
                     }
 
@@ -38,7 +38,7 @@ window.addEventListener('load', async () => {
         })
     } else {
         console.log('Sign into Phantom!')
-        $('body').html('<p id="oops">Sign into <strong><a href="https://phantom.app/">Phantom</a> </strong> to find out how much in fees you\'ve paid on Solana!')
+        $('body').html('<p id="oops">Sign into <strong><a href="https://phantom.app/">Phantom</a> </strong> to find out how much in fees you\'ve paid on Solana!</p>')
         return;
     }
 });
